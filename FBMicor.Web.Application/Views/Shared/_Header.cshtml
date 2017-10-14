@@ -13,12 +13,31 @@
                     </a>
                 </div>
                 <!-- ENd Navbar Brand -->
-
             </div>
 
             <div class="collapse navbar-collapse navbar-responsive-collapse">
                 <div class="menu-container">
-
+                    <div class="form-search-holder top-head-form">
+                        <form class="form-inline" action="" onsubmit="return fixDigits();" name="header-main-action-form" method="post">
+                            <div class="form-group is-empty">
+                                <div class="dropdown col-md-5 col-sm-5">
+                                    <button class="btn btn-default dropdown-toggle main-search-dropdown" type="button"
+                                            id="headerMainDropdown" data-toggle="dropdown">
+                                        <i class="fa-down-arrow-01-01 pull-right"></i><span>I would like to</span> <div class="ripple-container"><div class="ripple ripple-on ripple-out" style="left: 21.55px; top: -18.85px; background-color: rgb(0, 0, 0); transform: scale(2.82012);"></div></div>
+                                    </button>
+                                    <ul id="header-dropdown-menulist" class="dropdown-menu" role="menu" aria-labelledby="headerMainDropdown">
+                                        <li id="homeLoan" action="~/Home/homeloan">Get Personal Loan</li>
+                                        <li id="balanceTransfer" action="/Home/balancetransfer">Get Home Loan</li>
+                                    </ul> <input name="header_main_dropdown_id" value="0" type="hidden"> <input name="header_main_dropdown_value" value="I would like to" type="hidden"> <input name="header_main_dropdown_action" value="" type="hidden">
+                                </div>
+                                <div class="input-group col-md-4 col-sm-4">
+                                    <input class="form-control digit" name="header_main_loan_amount" id="exampleInputAmount" placeholder="Amount" value="" type="text">
+                                    <i class="fa-rupee"></i>
+                                </div>
+                                <button type="submit" class="btn home-submit-btn col-md-3 col-sm-3">Search</button> <span class="material-input"></span>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

@@ -3,6 +3,39 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style type="text/css">
+    img.auto {
+        margin: 0 auto 10px;
+    }
 
-<h2>Index</h2>
+    div.interactive-slider-v2 {
+        width: 100%;
+        background: url('/assets/images/contract-945619_1280.jpg');
+        background-size: cover;
+    }
+
+        div.interactive-slider-v2:after {
+            background: rgba(0,0,0,.7);
+        }
+</style>
+
+<div class="interactive-slider-v2" id="home-page-main-bg" style="min-height: 640px;">
+    <meta itemprop="url" content="https://www.financebuddha.com/"><meta itemprop="name" content="Finance Buddha">
+    <meta itemprop="description" content="Compare &amp; Apply Online for Personal Loan, Home Loan &amp; Business Loan from top banks. Check Rates, Special Offers &amp; Calculate EMI. Get Quick e-approval.">
+    <script type="text/javascript">
+        resizeWindow();
+    </script>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-12 col-md-offset-3 head-form">
+                <form class="form-inline" action="" id="home-main-action-form" onsubmit="onhomepageloansearchsubmit();" name="home-main-action-form" method="post"> <div class="form-group is-empty"> <div class="dropdown col-md-6 col-sm-6"> <button class="btn btn-default dropdown-toggle main-search-dropdown" type="button" id="homeMainDropdown" data-toggle="dropdown"> <i class="fa-down-arrow-01-01 pull-right"></i><span>I would like to</span> </button> <ul id="home-main-dropdown-menulist" class="dropdown-menu" role="menu" aria-labelledby="homeMainDropdown"> <li id="1" action="/personal-loan/compare-offers">Get Personal Loan</li> <li id="2" action="/home-loan">Get Home Loan</li> <li id="3" action="/business-loan">Get Business Loan</li> </ul> <input name="header_main_dropdown_id" value="0" type="hidden"> <input name="header_main_dropdown_value" value="I would like to" type="hidden"> <input name="header_main_dropdown_action" value="" type="hidden"> </div> <div class="input-group col-md-3 col-sm-3"> <input class="form-control digit" name="header_main_loan_amount" placeholder="Amount" value="" type="text"> <i class="fa-rupee"></i> </div> <button type="submit" class="btn home-submit-btn col-md-3 col-sm-3">Search</button> <span class="material-input"></span></div> </form>
+            </div>
+        </div> <div class="row row-products">
+            <div class="col-sm-5 col-md-5">
+                <div class="col-sm-6 col-md-6"> <a href="personal-loan"> <div class="product-icon"> <i class="fa-personal"></i> </div> <h3>Personal Loan</h3> </a> </div> <div class="col-sm-6 col-md-6"> <a href="home-loan"> <div class="col-sm-12 col-md-12 product-icon"> <i class="fa-home"></i> </div> <h3>Home Loan</h3> </a> </div>
+            </div> <div class="col-sm-2 col-md-2"> <a href="insta-loan"> <div class="product-icon"> <i class="fa-personal inst"></i> </div> <h3 class="insta">Insta Loan</h3> </a> </div> <div class="col-sm-5 col-md-5"> <div class="col-sm-6 col-md-6"> <a href="business-loan"> <div class="product-icon"> <i class="fa-business"></i> </div> <h3>Business Loan</h3> </a> </div> <div class="col-sm-6 col-md-6"> <a href="personal-loan"> </a><div class="product-icon"><a href="personal-loan"> <i class="fa-debt"></i></a> </div> <h3>Debt Consolidation</h3>  </div> </div>
+        </div>
+    </div> <div class="row row-points">
+    </div>
+</div>
 
