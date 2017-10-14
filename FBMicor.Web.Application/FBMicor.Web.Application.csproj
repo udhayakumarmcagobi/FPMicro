@@ -89,8 +89,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\banks\logos\axis.png" />
+    <Content Include="assets\banks\logos\bajajfinserv.png" />
+    <Content Include="assets\banks\logos\capitalfirst.png" />
+    <Content Include="assets\banks\logos\citi.png" />
+    <Content Include="assets\banks\logos\hdfc.png" />
+    <Content Include="assets\banks\logos\icici.png" />
+    <Content Include="assets\banks\logos\indusind.png" />
+    <Content Include="assets\banks\logos\kotak.png" />
+    <Content Include="assets\banks\logos\loading-wallet.gif" />
+    <Content Include="assets\banks\logos\scb.png" />
+    <Content Include="assets\banks\logos\tatacapital.png" />
     <Content Include="assets\images\contract-945619_1280.jpg" />
     <Content Include="assets\images\header-logo.png" />
+    <Content Include="assets\images\loaders\loading-wallet.gif" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />

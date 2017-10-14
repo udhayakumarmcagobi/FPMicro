@@ -43,6 +43,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -90,6 +91,15 @@
     <Compile Include="DataRepository\UserDetailRepository.cs" />
     <Compile Include="DataRepository\UserHomeLoanRepository.cs" />
     <Compile Include="DataRepository\VoucherMastetRepository.cs" />
+    <Compile Include="Extensions\QueryableExtensions.cs" />
+    <Compile Include="Infrastructure\EFRepository\EFRepository.cs" />
+    <Compile Include="Infrastructure\Factory\DBFactory.cs" />
+    <Compile Include="Infrastructure\Factory\Disposable.cs" />
+    <Compile Include="Infrastructure\Interfaces\IDBFactory.cs" />
+    <Compile Include="Infrastructure\Interfaces\IEFRepository.cs" />
+    <Compile Include="Infrastructure\Interfaces\IEFUnitOfWork.cs" />
+    <Compile Include="Infrastructure\Interfaces\IUnitOfWork.cs" />
+    <Compile Include="Infrastructure\UnitOfWork\EFUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
