@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title  - Finance Buddha</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/modernizr-2.6.2.js"></script>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="~/CustomScripts/Site.js"></script>
+
+</head>
+<body class="sliding-panel-ini sliding-panel-flag-right heade-fixed">
+    <div id="mainwrapper" class="wrapper">
+        <div itemscope="" itemtype="http://schema.org/Organization">
+            @Html.Partial("_Header")
+            @RenderBody()
+            @Html.Partial("_Footer")
+        </div>
+    </div>
+</body>
+</html>
