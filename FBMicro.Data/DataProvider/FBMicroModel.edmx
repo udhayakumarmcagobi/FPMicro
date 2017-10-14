@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FBMicroModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BankLoanDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="BankId" Type="int" Nullable="false" />
+          <Property Name="ROIBelow30Lk" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ROIAbove30Lk" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ProcessingFeeBelow30Lk" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ProcessingFeeAbove30Lk" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="MODCharges" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="DocumentCharges" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ForeClosureCharges" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="PrePaymentCharges" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OffersIfAny" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="BankMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="OfferPercentage" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="UserBalanceTransferDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="BankId" Type="int" Nullable="false" />
+          <Property Name="LoanAmount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="isTopUpNeeded" Type="bit" Nullable="false" />
+          <Property Name="TopUpAmount" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="UserDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ContactNo" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserHomeLoanDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="BankId" Type="int" Nullable="false" />
+          <Property Name="LoanAmount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VoucherMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VoucherName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityContainer Name="FBMicroModelStoreContainer">
+          <EntitySet Name="BankLoanDetails" EntityType="Self.BankLoanDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BankMaster" EntityType="Self.BankMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserBalanceTransferDetails" EntityType="Self.UserBalanceTransferDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserDetails" EntityType="Self.UserDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserHomeLoanDetails" EntityType="Self.UserHomeLoanDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VoucherMaster" EntityType="Self.VoucherMaster" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FBMicroModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BankLoanDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="BankId" Type="Int32" Nullable="false" />
+          <Property Name="ROIBelow30Lk" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ROIAbove30Lk" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ProcessingFeeBelow30Lk" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ProcessingFeeAbove30Lk" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="MODCharges" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="DocumentCharges" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ForeClosureCharges" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PrePaymentCharges" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OffersIfAny" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="BankMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OfferPercentage" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="UserBalanceTransferDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="BankId" Type="Int32" Nullable="false" />
+          <Property Name="LoanAmount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="isTopUpNeeded" Type="Boolean" Nullable="false" />
+          <Property Name="TopUpAmount" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="UserDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ContactNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserHomeLoanDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="BankId" Type="Int32" Nullable="false" />
+          <Property Name="LoanAmount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VoucherMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VoucherName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="FBMicroContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BankLoanDetails" EntityType="Self.BankLoanDetail" />
+          <EntitySet Name="BankMasters" EntityType="Self.BankMaster" />
+          <EntitySet Name="UserBalanceTransferDetails" EntityType="Self.UserBalanceTransferDetail" />
+          <EntitySet Name="UserDetails" EntityType="Self.UserDetail" />
+          <EntitySet Name="UserHomeLoanDetails" EntityType="Self.UserHomeLoanDetail" />
+          <EntitySet Name="VoucherMasters" EntityType="Self.VoucherMaster" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FBMicroModelStoreContainer" CdmEntityContainer="FBMicroContext">
+          <EntitySetMapping Name="BankLoanDetails">
+            <EntityTypeMapping TypeName="FBMicroModel.BankLoanDetail">
+              <MappingFragment StoreEntitySet="BankLoanDetails">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BankId" ColumnName="BankId" />
+                <ScalarProperty Name="ROIBelow30Lk" ColumnName="ROIBelow30Lk" />
+                <ScalarProperty Name="ROIAbove30Lk" ColumnName="ROIAbove30Lk" />
+                <ScalarProperty Name="ProcessingFeeBelow30Lk" ColumnName="ProcessingFeeBelow30Lk" />
+                <ScalarProperty Name="ProcessingFeeAbove30Lk" ColumnName="ProcessingFeeAbove30Lk" />
+                <ScalarProperty Name="MODCharges" ColumnName="MODCharges" />
+                <ScalarProperty Name="DocumentCharges" ColumnName="DocumentCharges" />
+                <ScalarProperty Name="ForeClosureCharges" ColumnName="ForeClosureCharges" />
+                <ScalarProperty Name="PrePaymentCharges" ColumnName="PrePaymentCharges" />
+                <ScalarProperty Name="OffersIfAny" ColumnName="OffersIfAny" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BankMasters">
+            <EntityTypeMapping TypeName="FBMicroModel.BankMaster">
+              <MappingFragment StoreEntitySet="BankMaster">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="OfferPercentage" ColumnName="OfferPercentage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserBalanceTransferDetails">
+            <EntityTypeMapping TypeName="FBMicroModel.UserBalanceTransferDetail">
+              <MappingFragment StoreEntitySet="UserBalanceTransferDetails">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="BankId" ColumnName="BankId" />
+                <ScalarProperty Name="LoanAmount" ColumnName="LoanAmount" />
+                <ScalarProperty Name="isTopUpNeeded" ColumnName="isTopUpNeeded" />
+                <ScalarProperty Name="TopUpAmount" ColumnName="TopUpAmount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserDetails">
+            <EntityTypeMapping TypeName="FBMicroModel.UserDetail">
+              <MappingFragment StoreEntitySet="UserDetails">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserHomeLoanDetails">
+            <EntityTypeMapping TypeName="FBMicroModel.UserHomeLoanDetail">
+              <MappingFragment StoreEntitySet="UserHomeLoanDetails">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="BankId" ColumnName="BankId" />
+                <ScalarProperty Name="LoanAmount" ColumnName="LoanAmount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VoucherMasters">
+            <EntityTypeMapping TypeName="FBMicroModel.VoucherMaster">
+              <MappingFragment StoreEntitySet="VoucherMaster">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="VoucherName" ColumnName="VoucherName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FBMicro.Data
+namespace FBMicro.Data.DataRepository
 {
-    public class Class1
+    public class BankMasterRepository
     {
     }
 }

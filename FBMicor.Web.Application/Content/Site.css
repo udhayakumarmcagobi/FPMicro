@@ -22377,8 +22377,7 @@ a:hover {
   border-top: 5px solid #555;
 }
 
-.footer-v3 {
-    position:fixed;
+.footer-v3 {    
     height:auto;
     bottom: 0px;
     left: 0px;
@@ -33644,6 +33643,7 @@ html.remodal-is-locked {
   font-weight: 400;
   text-align: center;
   border-top: none;
+    border:1px solid #777;
 }
 
 .offers-wrapper .row-offers .offers-table-container table thead tr th i {
@@ -33661,6 +33661,7 @@ html.remodal-is-locked {
   text-align: center;
   vertical-align: middle;
   border-top: none;
+  border:1px solid #777;
 }
 
 .offers-wrapper .row-offers .offers-table-container table tbody tr td img.offers-table-bank-image {
