@@ -10,6 +10,56 @@ html {
 
 body {
   margin: 0;
+  font-family:finbud;
+}
+
+@font-face {
+ font-family:lato;
+ font-weight:300;
+ src:url(../assets/fonts/lato-light-webfont.eot);
+ src:url(../assets/fonts/lato-light-webfont.eot?#iefix) format('embedded-opentype'),
+     url(../assets/fonts/lato-light-webfont.woff2) format('woff2'),
+     url(../assets/fonts/lato-light-webfont.woff) format('woff'),
+     url(../assets/fonts/lato-light-webfont.ttf) format('truetype'),
+     url(../assets/fonts/Lato/lato-light-webfont.svg#latolight) format('svg');
+ font-style:normal
+}
+@font-face {
+ font-family:lato-regular;
+ src:url(../assets/fonts/lato-regular-webfont.eot);
+ src:url(../assets/fonts/lato-regular-webfont.eot?#iefix) format('embedded-opentype'),
+     url(../assets/fonts/lato-regular-webfont.woff2) format('woff2'), 
+     url(../assets/fonts/lato-regular-webfont.woff) format('woff'),
+     url(../assets/fonts/lato-regular-webfont.ttf) format('truetype'),
+     url(../assets/fonts/lato-regular-webfont.svg#latoregular) format('svg');
+ font-weight:400;
+ font-style:normal
+}
+@font-face {
+ font-family:raleway;
+ src:url(../assets/fonts/raleway-regular-webfont.eot);
+ src:url(../assets/fonts/raleway-regular-webfont.eot?#iefix) format('embedded-opentype'),
+     url(../assets/fonts/raleway-regular-webfont.woff2) format('woff2'),
+     url(../assets/fonts/raleway-regular-webfont.woff) format('woff'),
+     url(../assets/fonts/raleway-regular-webfont.ttf) format('truetype'),
+     url(../assets/fonts/raleway-regular-webfont.svg#ralewayregular) format('svg');
+ font-weight:400;
+ font-style:normal
+}
+
+@font-face {
+ font-family:finbud;
+ src:url(../assets/fonts/finbud.eot);
+ src:url(../assets/fonts/finbud.eot?#iefix) format("embedded-opentype"),
+     url(../assets/fonts/finbud.woff2) format('woff2'),
+     url(../assets/fonts/finbud.woff) format("woff"),
+     url(../assets/fonts/finbud.ttf) format("truetype"),
+     url(../assets/fonts/finbud.svg#finbud) format("svg");
+ font-weight:400;
+ font-style:normal
+}
+[data-icon]:before {
+ content:attr(data-icon)
 }
 
 article,
@@ -12449,6 +12499,25 @@ i.icon-bg-light-grey {
 .fa-fixed [class^=fa].fa-lg {
   width: 1.5625em;
 }
+
+[class*=" fa-"]:before,[class^=fa-]:before,[data-icon]:before {
+  font-family:finbud!important; font-style:normal!important; font-weight:400!important; font-variant:normal!important; text-transform:none!important; speak:none; 
+   line-height:1; -webkit-font-smoothing:antialiased;  -moz-osx-font-smoothing:grayscale ;
+}
+
+.fa-account:before{content:"\61"} 
+.fa-building:before{content:"\62"}
+.fa-business:before{content:"\63"}
+.fa-close:before{content:"\64"}
+.fa-correct-tick:before{content:"\65"}
+.fa-debt:before{content:"\66"}
+.fa-facebook:before{content:"\67"}
+.fa-home:before{content:"\68"}
+.fa-like:before{content:"\69"}
+.fa-loan:before{content:"\6b"}
+.fa-locate:before{content:"\6c"}
+.fa-mail:before{content:"\6d"}
+.fa-next:before{content:"\6e"}.fa-right:before{content:"\6f"}.fa-snapshot:before{content:"\71"}.fa-upload:before{content:"\73";}.fa-wrong-tick:before{content:"\74"}.fa-twitter:before{content:"\75"}.fa-telephone:before{content:"\72"}.fa-menu-01:before,.fa-menu:before{content:"\76"}.fa-personal:before{content:"\6a"}.fa-down:before{content:"\77"}.fa-up:before{content:"\78"}.fa-chevron-down:before,.fa-down-arrow-01-01:before{content:"\79"}.fa-chevron-up:before{content:"\7a"}.fa-how-it-works-compare:before{content:"\41"}.fa-how-it-works-online:before{content:"\42"}.fa-how-it-works-paperwork:before{content:"\43"}.fa-how-it-works-disbursal:before{content:"\44"}.fa-idea:before{content:"\45"}.fa-pen:before{content:"\46"}.fa-google:before{content:"\47"}.fa-rupee:before{content:"\48"}.fa-filter:before{content:"\49"}.fa-lock:before{content:"\4a"}.fa-linkedin:before{content:"\70"}.fa-spinner:before{content:"\4b"}.fa-load-c:before{content:"\4c"}.fa-star:before{content:"\4d"}.fa-star-half-o:before{content:"\4f"}.fa-star-o:before{content:"\50"}.fa-user:before{content:"\4e"}#preloader{position:fixed;top:0;left:0;right:0;bottom:0;background-color:#175382;z-index:9999;height:3px;width:0;-webkit-transition:width 0s ease-in-out;-moz-transition:width 0s ease-in-out;-o-transition:width 0s ease-in-out;transition:width 0s ease-in-out;transition-property:width;display: none;}#mainwrapper{display:block;}body{margin:0;padding:0; color: #333;font-size: 13px;line-height: 1.6;}
 
 .text-justify p {
   text-align: justify;
