@@ -22373,11 +22373,18 @@ a:hover {
 }
 
 .footer-v3 .footer {
-  padding: 20px 0;
   background: #262626;
   border-top: 5px solid #555;
 }
 
+.footer-v3 {
+    position:fixed;
+    height:auto;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+}
 .footer-v3 .thumb-headline h2 {
   color: #fff;
   line-height: 22px;
@@ -30166,7 +30173,7 @@ body {
 
 .header-yellow {
   background: #255c8b!important;
-  z-index: 0;
+  z-index: 2;
 }
 
 @media (max-width:750px) {

@@ -1,0 +1,150 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="personal-loan-wrapper">
+    <div class="row-personal-loan-container">
+        <div class="row-personal-loan" itemscope="" itemtype="http://schema.org/Product">
+            <div class="container">
+                <h1>Balance Transfer</h1>
+            </div>
+            <div class="personal-loan-tab-panel">
+
+                <div class="tab-content">
+                    <div id="apply" class="tab-pane fade in active">
+                        <div class="personal-apply-tab-form-wrapper home-loan">
+                            <div class="container">
+                                <div class="text-center">
+                                    <form class="form-personal-apply form-home-apply" id="home-loan-apply-form">
+                                        <div class="text-center" style="margin-left:15%;">
+                                            <div class="row text-center personal-loan-mobile-row">
+
+                                                <div class="col-md-10 col-lg-8 col-xs-12 col-sm-12 home-loan-no-padding">
+                                                    <div class="form-group is-empty">
+
+                                                        <label for="loan-amount-input" class="col-md-5 col-sm-5 col-xs-12 control-label">
+                                                            Loan Amount you want to transfer<sup>*</sup>
+                                                        </label>
+                                                        <div class="col-md-7 col-sm-7 col-xs-12">
+                                                            <input class="digit form-control has-rupee-icon has-slider" value="" min="2500000" maxlength="12"
+                                                                   max="500000000" range-container="loan-range-input-container" name="LoanAmount" for="rangeInput" id="loan-amount-input"
+                                                                   oninput="loanrangeInput.value=loan_amount.value" type="text">
+                                                            <i class="form-control-feedback fa-rupee"></i>
+                                                        </div>
+                                                        <span class="material-input"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row text-center personal-loan-mobile-row">
+                                                <div class="col-md-10 col-lg-8 col-xs-12 col-sm-12 home-loan-no-padding">
+                                                    <div class="form-group is-empty">
+                                                        <label for="bank-name-input" class="col-md-5 col-sm-5 col-xs-12 control-label">Bank to which you want to move it<sup>*</sup></label>
+                                                        <div class="col-md-7 col-sm-7 col-xs-12 home-loan-select">
+                                                            <select name="BankName" id="bank-name-input">
+                                                                <option value="0">HDFC Bank</option>
+                                                                <option value="1">ICICI Bank</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <span class="material-input"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="row text-center personal-loan-mobile-row">
+
+                                                <div class="col-md-10 col-lg-8 col-xs-12 col-sm-12 home-loan-no-padding">
+                                                    <div class="form-group is-empty">
+                                                        <label for="is-top-up-loan" class="col-md-5 col-sm-5 col-xs-12 control-label">Are you looking for a Top Up Loan<sup>*</sup></label>
+                                                        <div class="col-md-7 col-sm-7 col-xs-12 home-loan-select">
+                                                            <select name="IsTopUpLoan" id="is-top-up-loan">
+                                                                <option value="0">Yes</option>
+                                                                <option value="1">No</option>
+                                                            </select>
+                                                        </div>
+                                                        <span class="material-input"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="text-center personal-loan-mobile-row">
+
+                                                <div class="col-md-10 col-lg-8 col-xs-12 col-sm-12 home-loan-no-padding">
+                                                    <div class="form-group is-empty">
+                                                        <label for="top-up-loan-amount-input" class="col-md-5 col-sm-5 col-xs-12 control-label">
+                                                            Top Up Loan Amount<sup>*</sup>
+                                                        </label>
+                                                        <div class="col-md-7 col-sm-7 col-xs-12">
+                                                            <input class="digit form-control has-rupee-icon has-slider" value="" min="2500000" maxlength="12"
+                                                                   max="500000000" range-container="loan-range-input-container"
+                                                                   name="TopUpLoanAmount" id="top-up-loan-amount-input"
+                                                                   type="text">
+                                                            <i class="form-control-feedback fa-rupee"></i>
+                                                        </div>
+                                                        <span class="material-input"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row text-center personal-loan-mobile-row">
+
+                                                <div class="col-md-10 col-lg-8 col-xs-12 col-sm-12 home-loan-no-padding">
+                                                    <div class="form-group is-empty">
+                                                        <label for="customer-name-input" class="col-md-5 col-sm-5 col-xs-12 control-label">Name<sup>*</sup></label>
+                                                        <div class="col-md-7 col-sm-7 col-xs-12">
+                                                            <input class="form-control" value="" name="CustomerName" for="rangeInput" id="customer-name-input"
+                                                                   type="text">
+                                                        </div>
+                                                        <span class="material-input"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="text-center personal-loan-mobile-row">
+
+                                                <div class="col-md-10 col-lg-8 col-xs-12 col-sm-12 home-loan-no-padding">
+                                                    <div class="form-group is-empty">
+                                                        <label for="customer-phone-input" class="col-md-5 col-sm-5 col-xs-12 control-label">Phone Number<sup>*</sup></label>
+                                                        <div class="col-md-7 col-sm-7 col-xs-12">
+                                                            <input class="form-control" value="" name="CustomerPhone" for="rangeInput" id="customer-phone-input"
+                                                                   type="text">
+                                                        </div>
+                                                        <div class="col-xs-offset-5 col-xs-7"><span class="help-block" default=""></span></div>
+                                                        <span class="material-input"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-xs-12">
+                                                <div class="form-group text-center">
+                                                    <button style="float:left; margin-left:12%;" type="button" class="btn btn-primary home-loan-btn-submit" id="check-out-offer-btn">
+                                                        Check Out my Offers<div class="ripple-container">
+                                                            <div class="ripple ripple-on ripple-out" style="float:left; left: 22.5px; top: -6.84998px;
+                                                            background-color: rgb(255, 255, 255); transform: scale(4.58333);"></div>
+                                                        </div>
+                                                    </button>
+
+                                                    <button style="float:left; margin-left:12%;" type="button" class="btn btn-primary home-loan-btn-submit" id="home-loan-details-btn">
+                                                        Calculate<div class="ripple-container">
+                                                            <div class="ripple ripple-on ripple-out"
+                                                                 style="float:left; left: 22.5px; top: -6.84998px; background-color: rgb(255, 255, 255);
+                                                                        transform: scale(4.58333);"></div>
+                                                        </div>
+                                                    </button>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
