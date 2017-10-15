@@ -17,5 +17,6 @@ namespace FBMicro.Data.DataProvider
         public int Id { get; set; }
         public string Name { get; set; }
         public Nullable<decimal> OfferPercentage { get; set; }
+        public string BankLogoPath { get; set; }
     }
 }

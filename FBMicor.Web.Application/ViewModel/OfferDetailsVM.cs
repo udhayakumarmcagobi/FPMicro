@@ -7,6 +7,11 @@ namespace FBMicor.Web.Application.ViewModel
 {
     public class OfferDetailsVM
     {
+        public OfferDetailsVM()
+        {
+            bankDetails = new List<BankDetailsVM>();
+        }
+
         public List<BankDetailsVM> bankDetails { get; set; }
     }
 }

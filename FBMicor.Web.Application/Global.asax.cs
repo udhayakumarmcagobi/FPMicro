@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FBMicor.Web.Application.App_Start;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,7 @@ namespace FBMicor.Web.Application
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+            Bootstrapper.RegisterComponents();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
     }

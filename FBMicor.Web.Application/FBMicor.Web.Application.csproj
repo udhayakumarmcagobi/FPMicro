@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -136,7 +140,11 @@
     <Content Include="Views\Shared\_Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\Bootstrapper.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="AutoMapperConfiguration\AutoMapperConfig.cs" />
+    <Compile Include="AutoMapperConfiguration\Profiles\SqlEntityToViewModelProfile.cs" />
+    <Compile Include="AutoMapperConfiguration\Profiles\ViewModelToSqlEntityProfile.cs" />
     <Compile Include="Controllers\BalanceTransferController.cs" />
     <Compile Include="Controllers\BTSavingsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -145,6 +153,7 @@
     <Compile Include="Controllers\OffersController.cs" />
     <Compile Include="Core\BalanceTransferService.cs" />
     <Compile Include="Core\BankLoanDetailService.cs" />
+    <Compile Include="Core\BaseService.cs" />
     <Compile Include="Core\HomeLoanService.cs" />
     <Compile Include="Core\OfferDetailService.cs" />
     <Compile Include="Core\SavingCalculatorService.cs" />
@@ -182,6 +191,12 @@
     <Folder Include="App_Data\" />
     <Folder Include="Views\BTSavings\" />
     <Folder Include="Views\Offers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FBMicro.Data\FBMicro.Data.csproj">
+      <Project>{3d561c56-a811-4a89-9d2f-392cfeed7822}</Project>
+      <Name>FBMicro.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

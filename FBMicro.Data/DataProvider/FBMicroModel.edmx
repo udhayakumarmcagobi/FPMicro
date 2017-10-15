@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FBMicroModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="FBMicroModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BankLoanDetails">
           <Key>
             <PropertyRef Name="Id" />
@@ -28,6 +28,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="OfferPercentage" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="BankLogoPath" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="UserBalanceTransferDetails">
           <Key>
@@ -73,8 +74,7 @@
           <EntitySet Name="UserHomeLoanDetails" EntityType="Self.UserHomeLoanDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VoucherMaster" EntityType="Self.VoucherMaster" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FBMicroModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -101,6 +101,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="OfferPercentage" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="BankLogoPath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="UserBalanceTransferDetail">
           <Key>
@@ -172,6 +173,7 @@
           <EntitySetMapping Name="BankMasters">
             <EntityTypeMapping TypeName="FBMicroModel.BankMaster">
               <MappingFragment StoreEntitySet="BankMaster">
+                <ScalarProperty Name="BankLogoPath" ColumnName="BankLogoPath" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="OfferPercentage" ColumnName="OfferPercentage" />

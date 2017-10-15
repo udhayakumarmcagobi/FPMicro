@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FBMicor.Web.Application.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,18 @@ namespace FBMicor.Web.Application.Controllers
 {
     public class HomeLoanController : Controller
     {
+        private readonly HomeLoanService homeLoanService;
+
+        public HomeLoanController()
+        {
+            homeLoanService = new Core.HomeLoanService();
+        }
+
         // GET: HomeLoan
         public ActionResult Index()
         {
-            return View();
+            var homeLoanVM = homeLoanService.GetHomeLoanEmpty();
+            return View(homeLoanVM);
         }
     }
 }
