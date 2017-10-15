@@ -85,12 +85,12 @@
     <Compile Include="DataProvider\VoucherMaster.cs">
       <DependentUpon>FBMicroModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataRepository\BankLoadDetailRepository.cs" />
+    <Compile Include="DataRepository\BankLoanDetailRepository.cs" />
     <Compile Include="DataRepository\BankMasterRepository.cs" />
     <Compile Include="DataRepository\UserBalanceTransferRepository.cs" />
     <Compile Include="DataRepository\UserDetailRepository.cs" />
     <Compile Include="DataRepository\UserHomeLoanRepository.cs" />
-    <Compile Include="DataRepository\VoucherMastetRepository.cs" />
+    <Compile Include="DataRepository\VoucherMasterRepository.cs" />
     <Compile Include="Extensions\QueryableExtensions.cs" />
     <Compile Include="Infrastructure\EFRepository\EFRepository.cs" />
     <Compile Include="Infrastructure\Factory\DBFactory.cs" />

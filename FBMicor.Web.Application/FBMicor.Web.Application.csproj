@@ -143,6 +143,11 @@
     <Compile Include="Controllers\HomeLoanController.cs" />
     <Compile Include="Controllers\LoanDetailsController.cs" />
     <Compile Include="Controllers\OffersController.cs" />
+    <Compile Include="Core\BalanceTransferService.cs" />
+    <Compile Include="Core\BankLoanDetailService.cs" />
+    <Compile Include="Core\HomeLoanService.cs" />
+    <Compile Include="Core\OfferDetailService.cs" />
+    <Compile Include="Core\SavingCalculatorService.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
