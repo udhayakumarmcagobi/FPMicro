@@ -23,8 +23,11 @@ namespace FBMicro.Data.DataRepository
             if (user == null) return false;
 
             var entity = GetFirstOrDefault(x => x.Name.Equals(user.Name) && x.ContactNo.Equals(user.ContactNo));
-            if (entity != null) return false;
-
+            if (entity != null)
+            {
+                user.Id = entity.Id;
+                return true;
+            }
             Insert(user);
             Commit();
 

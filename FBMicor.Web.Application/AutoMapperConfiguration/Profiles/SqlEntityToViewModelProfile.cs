@@ -19,6 +19,8 @@ namespace FBMicor.Web.Application.AutoMapperConfiguration.Profiles
             CreateMap<BankMaster, BankDetailsVM>()
                .ForMember(model => model.BankID, map => map.MapFrom(m => m.Id))
                .ForMember(model => model.BankName, map => map.MapFrom(m => m.Name))
+               .ForMember(model => model.BankLogo, map => map.MapFrom(m => m.BankLogoPath))
+               .ForMember(model => model.BankDescription, map => map.MapFrom(m => m.Description))
                .ForMember(model => model.offerPercentage, map => map.MapFrom(m => Convert.ToString(m.OfferPercentage)))
                .ForMember(model => model.Selected, map => map.Ignore());
         }

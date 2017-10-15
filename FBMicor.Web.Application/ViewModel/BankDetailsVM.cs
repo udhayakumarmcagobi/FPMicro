@@ -9,6 +9,8 @@ namespace FBMicor.Web.Application.ViewModel
     {
         public string BankID { get; set; }
         public string BankName { get; set; }
+        public string BankDescription { get; set; }
+        public string BankLogo { get; set; }
         public string offerPercentage { get; set; }
         public bool Selected { get; set; }
     }

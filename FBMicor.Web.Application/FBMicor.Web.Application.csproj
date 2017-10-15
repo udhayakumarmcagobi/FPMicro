@@ -99,9 +99,11 @@
     <Content Include="assets\banks\logos\citi.png" />
     <Content Include="assets\banks\logos\hdfc.png" />
     <Content Include="assets\banks\logos\icici.png" />
+    <Content Include="assets\banks\logos\idfc.png" />
     <Content Include="assets\banks\logos\indusind.png" />
     <Content Include="assets\banks\logos\kotak.png" />
     <Content Include="assets\banks\logos\loading-wallet.gif" />
+    <Content Include="assets\banks\logos\pnbhfl.png" />
     <Content Include="assets\banks\logos\scb.png" />
     <Content Include="assets\banks\logos\tatacapital.png" />
     <Content Include="assets\images\contract-945619_1280.jpg" />
@@ -147,6 +149,7 @@
     <Compile Include="AutoMapperConfiguration\Profiles\ViewModelToSqlEntityProfile.cs" />
     <Compile Include="Controllers\BalanceTransferController.cs" />
     <Compile Include="Controllers\BTSavingsController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomeLoanController.cs" />
     <Compile Include="Controllers\LoanDetailsController.cs" />
@@ -180,6 +183,8 @@
     <Content Include="Views\HomeLoan\Index.cshtml" />
     <Content Include="Views\BalanceTransfer\Index.cshtml" />
     <Content Include="Views\LoanDetails\Index.cshtml" />
+    <Content Include="Views\Offers\Index.cshtml" />
+    <Content Include="Views\Error\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -190,7 +195,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\BTSavings\" />
-    <Folder Include="Views\Offers\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FBMicro.Data\FBMicro.Data.csproj">
