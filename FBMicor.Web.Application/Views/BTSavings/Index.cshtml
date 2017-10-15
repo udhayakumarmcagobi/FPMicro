@@ -1,0 +1,304 @@
+﻿@model FBMicro.Web.Application.ViewModel.BalanceTransferVM
+@{
+    ViewBag.Title = "BT Savings Calculator";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="personal-loan-wrapper">
+    <div class="row-personal-loan-container">
+        <div class="row-personal-loan" itemscope="" itemtype="http://schema.org/Product">
+            <div class="container">
+                <h1>Check out your Savings by Doing a Balance transfer</h1>
+            </div>
+            <div class="personal-loan-tab-panel">
+
+                <div class="tab-content">
+                    <div id="apply" class="tab-pane fade in active">
+                        <div class="personal-apply-tab-form-wrapper home-loan">
+                            <div class="container">
+                                <form class="form-personal-apply form-home-apply" id="home-loan-apply-form" method="post" action="~/HomeLoan/Checkout">
+                                    <div class="row text-center personal-loan-mobile-row">
+
+                                        <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 home-loan-no-padding">
+                                            <div class="form-group is-empty">
+
+                                                <label for="loan-amount-input" class="col-md-5 col-sm-5 col-xs-12 control-label">Original Loan Amount you had taken<sup>*</sup></label>
+                                                <div class="col-md-7 col-sm-7 col-xs-12">
+                                                    <input class="digit form-control has-rupee-icon has-slider" value="" maxlength="12"
+                                                           name="LoanAmount" for="rangeInput" id="loan-amount-input"
+                                                           oninput="loanrangeInput.value=loan_amount.value" type="text">
+                                                    <i class="form-control-feedback fa-rupee"></i>
+                                                </div>
+                                                <span class="material-input"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1 col-lg-1 col-xs-12 col-sm-12 home-loan-no-padding">
+                                            </div>
+                                            <div class="col-md-5 col-lg-5 col-xs-12 col-sm-12 home-loan-no-padding">
+                                                <div class="form-group is-empty">
+
+                                                    <label for="loan-amount-input" class="col-md-5 col-sm-6 col-xs-12 control-label">Your New Home Loan Rate<sup>*</sup></label>
+                                                    <div class="col-md-7 col-sm-6 col-xs-12">
+                                                        <input class="digit form-control has-rupee-icon has-slider" value="" maxlength="12"
+                                                               name="LoanAmount" for="rangeInput" id="loan-amount-input"
+                                                               oninput="loanrangeInput.value=loan_amount.value" type="text">
+                                                        <i class="form-control-feedback fa-rupee"></i>
+                                                    </div>
+                                                    <span class="material-input"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    <div class="row text-center personal-loan-mobile-row">
+
+                                        <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 home-loan-no-padding">
+                                            <div class="form-group is-empty">
+
+                                                <label for="loan-amount-input" class="col-md-5 col-sm-5 col-xs-12 control-label">Your current Home Loan EMI<sup>*</sup></label>
+                                                <div class="col-md-7 col-sm-7 col-xs-12">
+                                                    <input class="digit form-control has-rupee-icon has-slider" value="" maxlength="12"
+                                                           name="LoanAmount" for="rangeInput" id="loan-amount-input"
+                                                           oninput="loanrangeInput.value=loan_amount.value" type="text">
+                                                    <i class="form-control-feedback fa-rupee"></i>
+                                                </div>
+                                                <span class="material-input"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1 col-lg-1 col-xs-12 col-sm-12 home-loan-no-padding">
+                                        </div>
+                                        <div class="col-md-5 col-lg-5 col-xs-12 col-sm-12 home-loan-no-padding">
+                                            <div class="form-group is-empty">
+
+                                                <label for="loan-amount-input" class="col-md-5 col-sm-5 col-xs-12 control-label">Your New EMI<sup>*</sup></label>
+                                                <div class="col-md-7 col-sm-7 col-xs-12">
+                                                    <input class="digit form-control has-rupee-icon has-slider" value="" maxlength="12"
+                                                           name="LoanAmount" for="rangeInput" id="loan-amount-input"
+                                                           oninput="loanrangeInput.value=loan_amount.value" type="text">
+                                                    <i class="form-control-feedback fa-rupee"></i>
+                                                </div>
+                                                <span class="material-input"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row text-center personal-loan-mobile-row">
+
+                                        <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 home-loan-no-padding">
+                                            <div class="form-group is-empty">
+
+                                                <label for="loan-amount-input" class="col-md-5 col-sm-5 col-xs-12 control-label">Your current Loan Outstanding<sup>*</sup></label>
+                                                <div class="col-md-7 col-sm-7 col-xs-12">
+                                                    <input class="digit form-control has-rupee-icon has-slider" value="" maxlength="12"
+                                                           name="LoanAmount" for="rangeInput" id="loan-amount-input"
+                                                           oninput="loanrangeInput.value=loan_amount.value" type="text">
+                                                    <i class="form-control-feedback fa-rupee"></i>
+                                                </div>
+                                                <span class="material-input"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1 col-lg-1 col-xs-12 col-sm-12 home-loan-no-padding">
+                                        </div>
+                                        <div class="col-md-5 col-lg-5 col-xs-12 col-sm-12 home-loan-no-padding">
+                                            <div class="form-group is-empty">
+
+                                                <label for="loan-amount-input" class="col-md-5 col-sm-5 col-xs-12 control-label">Your Monthly Savings<sup>*</sup></label>
+                                                <div class="col-md-7 col-sm-7 col-xs-12">
+                                                    <input class="digit form-control has-rupee-icon has-slider" value="" maxlength="12"
+                                                           name="LoanAmount" for="rangeInput" id="loan-amount-input"
+                                                           oninput="loanrangeInput.value=loan_amount.value" type="text">
+                                                    <i class="form-control-feedback fa-rupee"></i>
+                                                </div>
+                                                <span class="material-input"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row text-center personal-loan-mobile-row">
+
+                                        <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 home-loan-no-padding">
+                                            <div class="form-group is-empty">
+
+                                                <label for="loan-amount-input" class="col-md-5 col-sm-5 col-xs-12 control-label">Your Current ROI<sup>*</sup></label>
+                                                <div class="col-md-7 col-sm-7 col-xs-12">
+                                                    <input class="digit form-control has-rupee-icon has-slider" value="" maxlength="12"
+                                                           name="LoanAmount" for="rangeInput" id="loan-amount-input"
+                                                           oninput="loanrangeInput.value=loan_amount.value" type="text">
+                                                    <i class="form-control-feedback fa-rupee"></i>
+                                                </div>
+                                                <span class="material-input"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1 col-lg-1 col-xs-12 col-sm-12 home-loan-no-padding">
+                                        </div>
+                                        <div class="col-md-5 col-lg-5 col-xs-12 col-sm-12 home-loan-no-padding">
+                                            <div class="form-group is-empty">
+
+                                                <label for="loan-amount-input" class="col-md-5 col-sm-5 col-xs-12 control-label">Your Annual Savings<sup>*</sup></label>
+                                                <div class="col-md-7 col-sm-7 col-xs-12">
+                                                    <input class="digit form-control has-rupee-icon has-slider" value="" maxlength="12"
+                                                           name="LoanAmount" for="rangeInput" id="loan-amount-input"
+                                                           oninput="loanrangeInput.value=loan_amount.value" type="text">
+                                                    <i class="form-control-feedback fa-rupee"></i>
+                                                </div>
+                                                <span class="material-input"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row text-center personal-loan-mobile-row">
+
+                                        <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 home-loan-no-padding">
+                                            <div class="form-group is-empty">
+
+                                                <label for="loan-amount-input" class="col-md-5 col-sm-5 col-xs-12 control-label">Tenor remaining on your Loan<sup>*</sup></label>
+                                                <div class="col-md-7 col-sm-7 col-xs-12">
+                                                    <input class="digit form-control has-rupee-icon has-slider" value="" maxlength="12"
+                                                           name="LoanAmount" for="rangeInput" id="loan-amount-input"
+                                                           oninput="loanrangeInput.value=loan_amount.value" type="text">
+                                                    <i class="form-control-feedback fa-rupee"></i>
+                                                </div>
+                                                <span class="material-input"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1 col-lg-1 col-xs-12 col-sm-12 home-loan-no-padding">
+                                        </div>
+                                        <div class="col-md-5 col-lg-5 col-xs-12 col-sm-12 home-loan-no-padding">
+                                            <div class="form-group is-empty">
+
+                                                <label for="loan-amount-input" class="col-md-5 col-sm-5 col-xs-12 control-label">Your savings for the whole tenor<sup>*</sup></label>
+                                                <div class="col-md-7 col-sm-7 col-xs-12">
+                                                    <input class="digit form-control has-rupee-icon has-slider" value="" maxlength="12"
+                                                           name="LoanAmount" for="rangeInput" id="loan-amount-input"
+                                                           oninput="loanrangeInput.value=loan_amount.value" type="text">
+                                                    <i class="form-control-feedback fa-rupee"></i>
+                                                </div>
+                                                <span class="material-input"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row text-center personal-loan-mobile-row">
+
+                                        <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 home-loan-no-padding">
+                                            <div class="form-group is-empty">
+                                               
+                                                <span class="material-input"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 home-loan-no-padding">
+                                            <div class="form-group is-empty">
+                                                
+                                                <span class="material-input"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row text-center personal-loan-mobile-row">
+
+                                        <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 home-loan-no-padding">
+                                            <div class="form-group is-empty">
+
+                                                <label for="loan-amount-input" class="col-md-5 col-sm-5 col-xs-12 control-label">Total EMI Outstanding on your Home Loan<sup>*</sup></label>
+                                                <div class="col-md-7 col-sm-7 col-xs-12">
+                                                    <input class="digit form-control has-rupee-icon has-slider" value="" maxlength="12"
+                                                           name="LoanAmount" for="rangeInput" id="loan-amount-input"
+                                                           oninput="loanrangeInput.value=loan_amount.value" type="text">
+                                                    <i class="form-control-feedback fa-rupee"></i>
+                                                </div>
+                                                <span class="material-input"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1 col-lg-1 col-xs-12 col-sm-12 home-loan-no-padding">
+                                        </div>
+                                        <div class="col-md-5 col-lg-5 col-xs-12 col-sm-12 home-loan-no-padding">
+                                            <div class="form-group is-empty">
+
+                                                <label for="loan-amount-input" class="col-md-5 col-sm-5 col-xs-12 control-label">Total EMI Outstanding on your Home Loan<sup>*</sup></label>
+                                                <div class="col-md-7 col-sm-7 col-xs-12">
+                                                    <input class="digit form-control has-rupee-icon has-slider" value="" maxlength="12"
+                                                           name="LoanAmount" for="rangeInput" id="loan-amount-input"
+                                                           oninput="loanrangeInput.value=loan_amount.value" type="text">
+                                                    <i class="form-control-feedback fa-rupee"></i>
+                                                </div>
+                                                <span class="material-input"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row text-center personal-loan-mobile-row">
+
+                                        <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 home-loan-no-padding">
+                                            <div class="form-group is-empty">
+
+                                                <label for="bank-name-input" class="col-md-5 col-sm-5 col-xs-12 control-label">Move the Loan to the Bank of your choice<sup>*</sup></label>
+                                                <div class="col-md-7 col-sm-7 col-xs-12 home-loan-select">
+                                                    @if (Model != null && Model.BankDetailsList != null && Model.BankDetailsList.Any())
+                                                    {
+                                                        <select name="selectedBankId" id="bank-name-input">
+                                                            <option value="0" selected> - Select Bank - </option>
+                                                            @for (var bankDetail = 0; bankDetail < Model.BankDetailsList.Count; bankDetail++)
+                                                            {
+                                                                <option value="@Model.BankDetailsList[bankDetail].BankID">@Model.BankDetailsList[bankDetail].BankName</option>
+                                                            }
+                                                        </select>
+                                                    }
+                                                </div>
+
+                                                <span class="material-input"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 home-loan-no-padding">
+                                            <div class="form-group is-empty">
+
+                                                <label for="loan-amount-input" class="col-md-4 col-sm-5 col-xs-12 control-label">DO Balance transfer now<sup>*</sup></label>
+                                                <div class="col-md-8 col-sm-7 col-xs-12">
+                                                    
+                                                    
+                                                </div>
+                                                <span class="material-input"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-12">
+                                        <div class="form-group text-right">
+                                            <button style="float:right;" type="button" class="btn btn-primary home-loan-btn-submit" id="check-out-offer-btn">
+                                                Apply Now
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function formsubmit() {
+        var validationResult = true;
+        if ($("#loan-amount-input").val() == '') {
+            validationResult = false;
+        }
+        if ($("#bank-name-input").val() == '' && $("#bank-name-input").val() != '0') {
+            validationResult = false;
+        }
+        if ($("#customer-name-input").val() == '') {
+            validationResult = false;
+        }
+        if ($("#customer-phone-input").val() == '') {
+            validationResult = false;
+        }
+
+        if (validationResult) {
+            $("form#home-loan-apply-form").submit();
+        }
+        else {
+            alert("Please enter all the required fields");
+        }
+    }
+</script>

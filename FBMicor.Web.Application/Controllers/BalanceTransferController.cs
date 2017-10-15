@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace FBMicro.Web.Application.Controllers
 {
@@ -36,7 +37,12 @@ namespace FBMicro.Web.Application.Controllers
                 return RedirectToAction("Index", "Error");
             }
 
-            return RedirectToAction("Index", "Offers");
+            return RedirectToAction("Index", "Offers", new
+                RouteValueDictionary(new
+                {
+                    bankID = balanceTransferVM.selectedBankID,
+                    loanAmount = balanceTransferVM.LoanAmount
+                }));
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FBMicor.Web.Application.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +10,11 @@ namespace FBMicro.Web.Application.ViewModel
     {
         public OfferDetailsVM()
         {
-            bankDetails = new List<BankDetailsVM>();
+            bankDetail = new BankDetailsVM();
         }
 
-        public List<BankDetailsVM> bankDetails { get; set; }
+        public BankDetailsVM bankDetail { get; set; }
+        public string OfferAmount { get; set; }        
+        public List<VoucherDetailsVM> vouchers { get; set; }
     }
 }

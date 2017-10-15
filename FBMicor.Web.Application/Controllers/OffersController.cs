@@ -1,4 +1,5 @@
 ﻿using FBMicro.Web.Application.Core;
+using FBMicro.Web.Application.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,17 +10,17 @@ namespace FBMicro.Web.Application.Controllers
 {
     public class OffersController : Controller
     {
-        private readonly BankLoanDetailService bankLoanDetailService;
+        private readonly OfferDetailService offerDetailService;
 
         public OffersController()
         {
-            bankLoanDetailService = new BankLoanDetailService();
+            offerDetailService = new Core.OfferDetailService();
         }
         // GET: Offers
-        public ActionResult Index()
+        public ActionResult Index(int bankID, string loanAmount)
         {
-            var bankLoanDetailList = bankLoanDetailService.GetBankLoanDetailList();
-            return View(bankLoanDetailList);
+            var offerDetailsList = offerDetailService.GetOfferDetails(bankID, loanAmount);
+            return View(offerDetailsList);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model List<FBMicro.Web.Application.ViewModel.BankLoanDetailsVM>
+﻿@model List<FBMicro.Web.Application.ViewModel.OfferDetailsVM>
 @{
     ViewBag.Title = "Checkout Offers";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -12,7 +12,6 @@
                 <meta itemprop="name" content="Finance Buddha">
             </span>
 
-
             <meta itemprop="description" content="Compare personal loans from top banks. * Lowest Interest Rates * Special Offers * Check Eligibility * Calculate EMI * Apply Online Now">
 
             <div class="col-md-12 offers-table-container">
@@ -22,43 +21,38 @@
                         <table class="table table-stripped entries" id="entriestable">
                             <thead>
                                 <tr>
-                                    <th style="width: 543.667px;">Banks<i class="fa-down"></i></th>
-                                    <th class="hidden-xs" style="width: 543.667px;">Interest Rates (Below 30 Lks)   </th>
-                                    <th class="hidden-xs" style="width: 543.667px;">Interest Rates (Above 30 Lks)   </th>
-                                    <th class="hidden-xs" style="width: 543.667px;">Processing Fees (Below 30 Lks)   </th>
-                                    <th class="hidden-xs" style="width: 543.667px;">Processing Fees (Above 30 Lks)   </th>
-                                    <th class="hidden-xs" style="width: 543.667px;">MOD Charges<i class="fa-down"></i></th>
-                                    <th class="hidden-xs" style="width: 543.667px;">Document Charges<i class="fa-down"></i></th>
-                                    <th class="hidden-xs" style="width: 543.667px;">Fore closure Charges<i class="fa-down"></i></th>
-                                    <th class="hidden-xs" style="width: 543.667px;">PrePayment charges<i class="fa-down"></i></th>
-                                    <th class="hidden-xs" style="width: 543.667px;">Offers if any<i class="fa-down"></i></th>
-                                    <th class="hidden-xs" style="width: 543.667px;">Apply Now<i class="fa-down"></i></th>
+                                    <th class="hidden-xs" style="width: 543.667px;">Bank Name</th>
+                                    <th style="width: 543.667px;">Offer percentage<i class="fa-down"></i></th>
+                                    <th class="hidden-xs" style="width: 543.667px;">Shopping</th>
+                                    <th class="hidden-xs" style="width: 543.667px;">Amount</th>
+                                    <th class="hidden-xs" style="width: 543.667px;"></th>
+                                    <th class="hidden-xs" style="width: 543.667px;"><i class="fa-down"></i></th>
+                                    <th class="hidden-xs" style="width: 543.667px;"><i class="fa-down"></i></th>
+                                    <th class="hidden-xs" style="width: 543.667px;"><i class="fa-down"></i></th>
+                                    <th class="hidden-xs" style="width: 543.667px;"><i class="fa-down"></i></th>
+                                    <th class="hidden-xs" style="width: 543.667px;"><i class="fa-down"></i></th>
                                 </tr>
                             </thead>
                             <tbody id="personal-loan-offers-container" class="loanoffer ">
 
-                                @for (int loanDetail = 0; loanDetail < Model.Count(); loanDetail++)
+                                @for (int offerDetail = 0; offerDetail < Model.Count(); offerDetail++)
                                 {
-                                    <tr>
-
+                                    <tr>                                        
                                         <td>
-                                            <input type="hidden" value="@Model[loanDetail].Id" />
-                                            <img src="@Model[loanDetail].bankDetails.BankLogo" class="img-responsive offers-table-bank-image"
-                                                 alt="@Model[loanDetail].bankDetails.BankDescription" title="@Model[loanDetail].bankDetails.BankDescription">
+                                            <img src="@Model[offerDetail].bankDetail.BankLogo" class="img-responsive offers-table-bank-image"
+                                                 alt="@Model[offerDetail].bankDetail.BankDescription" title="@Model[offerDetail].bankDetail.BankDescription">
                                         </td>
-                                        <td class="hidden-xs">@Model[loanDetail].ROIBelow30Lks<span>%</span> </td>
-                                        <td class="hidden-xs">@Model[loanDetail].ROIAbove30Lks<span>%</span> </td>
-                                        <td class="hidden-xs">@Model[loanDetail].ProcessingFeeBelow30Lks<span>%</span> </td>
-                                        <td class="hidden-xs">@Model[loanDetail].ProcessingFeeAbove30Lks<span>%</span> </td>
-                                        <td class="hidden-xs">upto @Model[loanDetail].MODCharges<span>%</span> </td>
-                                        <td class="hidden-xs">upto @Model[loanDetail].DocumentCharges<span>%</span> </td>
-                                        <td class="hidden-xs">upto @Model[loanDetail].ForeClosureCharges<span>%</span> </td>
-                                        <td class="hidden-xs">upto @Model[loanDetail].PrePaymentCharges<span>%</span> </td>
-                                        <td class="hidden-xs">@Model[loanDetail].OffersIfAny</td>
-                                        <td class="hidden-xs"><a class="btn btn-primary offers-btn-apply-now offers-disabled-btn" role="button">Apply Now</a></td>
+                                        <td class="hidden-xs">@Model[offerDetail].bankDetail.offerPercentage<span>%</span> of Loan Amount </td>
+                                        <td class="hidden-xs">Get Shopping vouchers worth</td>
+                                        <td class="hidden-xs">@Model[offerDetail].OfferAmount </td>
+                                        <td class="hidden-xs">FLIPKART</td>
+                                        <td class="hidden-xs">AMAZON</td>
+                                        <td class="hidden-xs">MYNTRA</td>
+                                        <td class="hidden-xs">SHOPPERS STOP</td>
+                                        <td class="hidden-xs">BIG BASKET</td>                                        
+                                        <td class="hidden-xs"><a class="btn btn-primary offers-btn-apply-now" onclick="claimgift()" role="button">CLAIM YOUR GIFT NOW</a></td>
 
                                     </tr>
-
                                 }
 
                             </tbody>
@@ -72,3 +66,8 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" >
+    function claimgift() {
+        alert("Thank you for Chosing FinanceBuddha, we will be calling you soon");
+    }
+</script>

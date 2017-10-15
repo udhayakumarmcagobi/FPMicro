@@ -158,6 +158,7 @@
     <Compile Include="Core\BalanceTransferService.cs" />
     <Compile Include="Core\BankLoanDetailService.cs" />
     <Compile Include="Core\BaseService.cs" />
+    <Compile Include="Core\EmailService.cs" />
     <Compile Include="Core\HomeLoanService.cs" />
     <Compile Include="Core\OfferDetailService.cs" />
     <Compile Include="Core\SavingCalculatorService.cs" />
@@ -171,6 +172,7 @@
     <Compile Include="ViewModel\CustomerVM.cs" />
     <Compile Include="ViewModel\HomeLoanVM.cs" />
     <Compile Include="ViewModel\OfferDetailsVM.cs" />
+    <Compile Include="ViewModel\VoucherDetailsVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -186,6 +188,7 @@
     <Content Include="Views\LoanDetails\Index.cshtml" />
     <Content Include="Views\Offers\Index.cshtml" />
     <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\BTSavings\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -195,7 +198,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\BTSavings\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FBMicro.Data\FBMicro.Data.csproj">
