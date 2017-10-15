@@ -19,6 +19,10 @@
             <div style="height:auto;"> @RenderBody()</div>
             @Html.Partial("_Footer")
         </div>
+        @{
+            string hostName = HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority) + HttpRuntime.AppDomainAppVirtualPath;
+        }
+        <input id="hostpath" type="hidden" value="@hostName" />
     </div>
 </body>
 </html>

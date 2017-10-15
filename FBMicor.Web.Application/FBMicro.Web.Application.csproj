@@ -47,6 +47,14 @@
       <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -104,6 +112,7 @@
     <Content Include="assets\banks\logos\kotak.png" />
     <Content Include="assets\banks\logos\loading-wallet.gif" />
     <Content Include="assets\banks\logos\pnbhfl.png" />
+    <Content Include="assets\banks\logos\sbi.png" />
     <Content Include="assets\banks\logos\scb.png" />
     <Content Include="assets\banks\logos\tatacapital.png" />
     <Content Include="assets\images\contract-945619_1280.jpg" />
@@ -133,6 +142,7 @@
     <Content Include="assets\fonts\raleway-regular-webfont.ttf" />
     <Content Include="assets\fonts\raleway-regular-webfont.woff" />
     <Content Include="assets\fonts\raleway-regular-webfont.woff2" />
+    <None Include="Properties\PublishProfiles\FBMicro.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -166,6 +176,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\HelperUtility.cs" />
     <Compile Include="ViewModel\BalanceTransferVM.cs" />
     <Compile Include="ViewModel\BankDetailsVM.cs" />
     <Compile Include="ViewModel\BankLoanDetailsVM.cs" />
@@ -175,7 +186,9 @@
     <Compile Include="ViewModel\VoucherDetailsVM.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\web.config" />
+    <Content Include="Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />

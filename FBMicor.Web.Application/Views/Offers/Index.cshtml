@@ -21,7 +21,7 @@
                         <table class="table table-stripped entries" id="entriestable">
                             <thead>
                                 <tr>
-                                    <th class="hidden-xs" style="width: 543.667px;">Bank Name</th>
+                                    <th class="hidden-xs" style="width: 543.667px;">BankName</th>
                                     <th style="width: 543.667px;">Offer percentage<i class="fa-down"></i></th>
                                     <th class="hidden-xs" style="width: 543.667px;">Shopping</th>
                                     <th class="hidden-xs" style="width: 543.667px;">Amount</th>
@@ -37,9 +37,12 @@
 
                                 @for (int offerDetail = 0; offerDetail < Model.Count(); offerDetail++)
                                 {
-                                    <tr>                                        
+                                    <tr>
+                                        @{
+                                            var bankLogoPath = @HelperUtility.HostPath + Model[offerDetail].bankDetail.BankLogo;
+                                        }
                                         <td>
-                                            <img src="@Model[offerDetail].bankDetail.BankLogo" class="img-responsive offers-table-bank-image"
+                                            <img src="@bankLogoPath" class="img-responsive offers-table-bank-image"
                                                  alt="@Model[offerDetail].bankDetail.BankDescription" title="@Model[offerDetail].bankDetail.BankDescription">
                                         </td>
                                         <td class="hidden-xs">@Model[offerDetail].bankDetail.offerPercentage<span>%</span> of Loan Amount </td>
@@ -49,7 +52,7 @@
                                         <td class="hidden-xs">AMAZON</td>
                                         <td class="hidden-xs">MYNTRA</td>
                                         <td class="hidden-xs">SHOPPERS STOP</td>
-                                        <td class="hidden-xs">BIG BASKET</td>                                        
+                                        <td class="hidden-xs">BIG BASKET</td>
                                         <td class="hidden-xs"><a class="btn btn-primary offers-btn-apply-now" onclick="claimgift()" role="button">CLAIM YOUR GIFT NOW</a></td>
 
                                     </tr>

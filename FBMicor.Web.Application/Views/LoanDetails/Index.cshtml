@@ -22,7 +22,7 @@
                         <table class="table table-stripped entries" id="entriestable">
                             <thead>
                                 <tr>
-                                    <th style="width: 543.667px;">Banks<i class="fa-down"></i></th>
+                                    <th style="width: 650.667px;">BankName<i class="fa-down"></i></th>
                                     <th class="hidden-xs" style="width: 543.667px;">Interest Rates (Below 30 Lks)   </th>
                                     <th class="hidden-xs" style="width: 543.667px;">Interest Rates (Above 30 Lks)   </th>
                                     <th class="hidden-xs" style="width: 543.667px;">Processing Fees (Below 30 Lks)   </th>
@@ -40,10 +40,12 @@
                                 @for (int loanDetail = 0; loanDetail < Model.Count(); loanDetail++)
                                 {
                                     <tr>
-
+                                        @{
+                                            var bankLogoPath = @HelperUtility.HostPath + Model[loanDetail].bankDetails.BankLogo;
+                                        }
                                         <td>
                                             <input type="hidden" value="@Model[loanDetail].Id" />
-                                            <img src="@Model[loanDetail].bankDetails.BankLogo" class="img-responsive offers-table-bank-image"
+                                            <img src=@bankLogoPath class="img-responsive offers-table-bank-image"
                                                  alt="@Model[loanDetail].bankDetails.BankDescription" title="@Model[loanDetail].bankDetails.BankDescription">
                                         </td>
                                         <td class="hidden-xs">@Model[loanDetail].ROIBelow30Lks<span>%</span> </td>

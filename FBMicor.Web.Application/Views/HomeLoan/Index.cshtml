@@ -92,7 +92,7 @@
                                                         Check Out my Offers
                                                     </button>
 
-                                                    <button style="float:left; margin-left:10%;" type="button" onclick="location.href = '/loandetails'" class="btn btn-primary home-loan-btn-submit" id="home-loan-details-btn">
+                                                    <button style="float:left; margin-left:10%;" type="button" onclick="redirectoLoanDetails()" class="btn btn-primary home-loan-btn-submit" id="home-loan-details-btn">
                                                         Charges & ROI across Banks
                                                     </button>
 
@@ -132,5 +132,11 @@
         else {
             alert("Please enter all the required fields");
         }
+    }
+
+    function redirectoLoanDetails() {
+        var hostPath = $("#hostpath").val();
+
+        window.location.href = hostPath + "/loandetails";
     }
 </script>
