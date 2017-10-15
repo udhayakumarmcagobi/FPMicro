@@ -129,7 +129,8 @@
                                                             Check Out my Offers
                                                         </button>
 
-                                                        <button style="float:left; margin-left:10%;" type="button" class="btn btn-primary home-loan-btn-submit" id="home-loan-details-btn">
+                                                        <button style="float:left; margin-left:10%;" type="button"  onclick="redirectoBTSavingsCalculator()"
+                                                                class="btn btn-primary home-loan-btn-submit" id="home-loan-details-btn">
                                                             BT Savings Calculator
                                                         </button>
 
@@ -169,5 +170,11 @@
         else {
             alert("Please enter all the required fields");
         }
+    }
+
+    function redirectoBTSavingsCalculator() {
+        var hostPath = $("#hostpath").val();
+
+        window.location.href = hostPath + "/btsavings";
     }
 </script>
