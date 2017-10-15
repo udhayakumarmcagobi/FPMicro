@@ -1,4 +1,4 @@
-﻿
+﻿@model List<FBMicro.Web.Application.ViewModel.BankLoanDetailsVM>
 @{
     ViewBag.Title = "Bank Loan Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -12,149 +12,58 @@
                 <meta itemprop="name" content="Finance Buddha">
             </span>
             
+
             <meta itemprop="description" content="Compare personal loans from top banks. * Lowest Interest Rates * Special Offers * Check Eligibility * Calculate EMI * Apply Online Now">
 
             <div class="col-md-12 offers-table-container">
                 <div class="table-responsive">
-                    <table class="table table-stripped entries"  id="entriestable">
-                        <thead>
-                            <tr>
-                                <th style="width: 543.667px;">Banks<i class="fa-down"></i></th>
-                                <th class="hidden-xs" style="width: 543.667px;">Interest Rates (Below 30 Lks - Above 30 Lks)<i class="fa-down"></i></th>
-                                <th class="hidden-xs" style="width: 543.667px;">Processing Fees (Below 30 Lks - Above 30 Lks)<i class="fa-down"></i></th>
-                                <th class="hidden-xs" style="width: 543.667px;">MOD Charges<i class="fa-down"></i></th>
-                                <th class="hidden-xs" style="width: 543.667px;">Document Charges<i class="fa-down"></i></th>
-                                <th class="hidden-xs" style="width: 543.667px;">Fore closure Charges<i class="fa-down"></i></th>
-                                <th class="hidden-xs" style="width: 543.667px;">PrePayment charges<i class="fa-down"></i></th>
-                                <th class="hidden-xs" style="width: 543.667px;">Offers if any<i class="fa-down"></i></th>
-                                <th class="hidden-xs" style="width: 543.667px;">Apply Now<i class="fa-down"></i></th>
-                            </tr>
-                        </thead>
-                        <tbody id="personal-loan-offers-container" class="loanoffer ">
-                            <tr>
-                                <td> <img src="~/assets/banks/logos/axis.png" class="img-responsive offers-table-bank-image" alt="Axis Bank" title="Axis Bank"> </td>
-                                <td class="hidden-xs"> 13.50% - 24.00%<p>(fixed)</p> </td>
-                                <td class="hidden-xs">13.50% - 24.00%<p>(fixed)</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">offeres</td>
-                                <td class="hidden-xs"><a class="btn btn-primary offers-btn-apply-now offers-disabled-btn" role="button">Apply Now</a></td>
-                            </tr>
+                    @if (Model != null && Model.Any())
+                    {
+                        <table class="table table-stripped entries" id="entriestable">
+                            <thead>
+                                <tr>
+                                    <th style="width: 543.667px;">Banks<i class="fa-down"></i></th>
+                                    <th class="hidden-xs" style="width: 543.667px;">Interest Rates (Below 30 Lks)   </th>
+                                    <th class="hidden-xs" style="width: 543.667px;">Interest Rates (Above 30 Lks)   </th>
+                                    <th class="hidden-xs" style="width: 543.667px;">Processing Fees (Below 30 Lks)   </th>
+                                    <th class="hidden-xs" style="width: 543.667px;">Processing Fees (Above 30 Lks)   </th>
+                                    <th class="hidden-xs" style="width: 543.667px;">MOD Charges<i class="fa-down"></i></th>
+                                    <th class="hidden-xs" style="width: 543.667px;">Document Charges<i class="fa-down"></i></th>
+                                    <th class="hidden-xs" style="width: 543.667px;">Fore closure Charges<i class="fa-down"></i></th>
+                                    <th class="hidden-xs" style="width: 543.667px;">PrePayment charges<i class="fa-down"></i></th>
+                                    <th class="hidden-xs" style="width: 543.667px;">Offers if any<i class="fa-down"></i></th>
+                                    <th class="hidden-xs" style="width: 543.667px;">Apply Now<i class="fa-down"></i></th>
+                                </tr>
+                            </thead>
+                            <tbody id="personal-loan-offers-container" class="loanoffer ">
 
-                            <tr>
-                                <td> <img src="~/assets/banks/logos/bajajfinserv.png" class="img-responsive offers-table-bank-image" alt="Bajaj Finance" title="Bajaj Finance"> </td>
-                                <td class="hidden-xs"> 13.00% - 18.00%<p>(fixed)</p> </td>
-                                <td class="hidden-xs">13.50% - 24.00%<p>(fixed)</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">offeres</td>
-                                <td class="hidden-xs"><a class="btn btn-primary offers-btn-apply-now offers-disabled-btn" role="button">Apply Now</a></td>
-                            </tr>
+                                @for (int loanDetail = 0; loanDetail < Model.Count(); loanDetail++)
+                                {
+                                    <tr>
 
-                            <tr>
-                                <td>
-                                    <img src="~/assets/banks/logos/capitalfirst.png" class="img-responsive offers-table-bank-image" alt="Capital First" title="Capital First">
-                                </td>
-                                <td class="hidden-xs"> 13.00% - 20.00%<p>(fixed)</p> </td>
-                                <td class="hidden-xs">13.50% - 24.00%<p>(fixed)</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">offeres</td>
-                                <td class="hidden-xs"><a class="btn btn-primary offers-btn-apply-now offers-disabled-btn" role="button">Apply Now</a></td>
-                            </tr>
+                                        <td>
+                                            <input type="hidden" value="@Model[loanDetail].Id" />
+                                            <img src="@Model[loanDetail].bankDetails.BankLogo" class="img-responsive offers-table-bank-image"
+                                                 alt="@Model[loanDetail].bankDetails.BankDescription" title="@Model[loanDetail].bankDetails.BankDescription">
+                                        </td>
+                                        <td class="hidden-xs">@Model[loanDetail].ROIBelow30Lks<span>%</span> </td>
+                                        <td class="hidden-xs">@Model[loanDetail].ROIAbove30Lks<span>%</span> </td>
+                                        <td class="hidden-xs">@Model[loanDetail].ProcessingFeeBelow30Lks<span>%</span> </td>
+                                        <td class="hidden-xs">@Model[loanDetail].ProcessingFeeAbove30Lks<span>%</span> </td>
+                                        <td class="hidden-xs">upto @Model[loanDetail].MODCharges<span>%</span> </td>
+                                        <td class="hidden-xs">upto @Model[loanDetail].DocumentCharges<span>%</span> </td>
+                                        <td class="hidden-xs">upto @Model[loanDetail].ForeClosureCharges<span>%</span> </td>
+                                        <td class="hidden-xs">upto @Model[loanDetail].PrePaymentCharges<span>%</span> </td>
+                                        <td class="hidden-xs">@Model[loanDetail].OffersIfAny</td>
+                                        <td class="hidden-xs"><a class="btn btn-primary offers-btn-apply-now offers-disabled-btn" role="button">Apply Now</a></td>
 
-                            <tr>
-                                <td> <img src="~/assets/banks/logos/citi.png" class="img-responsive offers-table-bank-image" alt="Citi Bank" title="Citi Bank"> </td>
-                                <td class="hidden-xs"> 11.99% - 15.75%<p>(fixed)</p> </td>
-                                <td class="hidden-xs">13.50% - 24.00%<p>(fixed)</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">offeres</td>
-                                <td class="hidden-xs"><a class="btn btn-primary offers-btn-apply-now offers-disabled-btn" role="button">Apply Now</a></td>
-                            </tr>
+                                    </tr>
 
-                            <tr>
-                                <td> <img src="~/assets/banks/logos/hdfc.png" class="img-responsive offers-table-bank-image" alt="HDFC Bank" title="HDFC Bank"> </td>
-                                <td class="hidden-xs"> 11.49% - 19.50%<p>(fixed)</p> </td>
-                                <td class="hidden-xs">13.50% - 24.00%<p>(fixed)</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">offeres</td>
-                                <td class="hidden-xs"><a class="btn btn-primary offers-btn-apply-now offers-disabled-btn" role="button">Apply Now</a></td>
-                            </tr>
+                                }
 
-                            <tr>
-                                <td> <img src="~/assets/banks/logos/icici.png" class="img-responsive offers-table-bank-image" alt="ICICI Bank" title="ICICI Bank"> </td>
-                                <td class="hidden-xs"> 11.49% - 17.85%<p>(fixed)</p> </td>
-                                <td class="hidden-xs">13.50% - 24.00%<p>(fixed)</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">offeres</td>
-                                <td class="hidden-xs"><a class="btn btn-primary offers-btn-apply-now offers-disabled-btn" role="button">Apply Now</a></td>
-                            </tr>
-
-                            <tr>
-                                <td> <img src="~/assets/banks/logos/indusind.png" class="img-responsive offers-table-bank-image" alt="IndusInd Bank" title="IndusInd Bank"> </td>
-                                <td class="hidden-xs"> 11.99% - 14.75%<p>(fixed)</p> </td>
-                                <td class="hidden-xs">13.50% - 24.00%<p>(fixed)</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">offeres</td>
-                                <td class="hidden-xs"><a class="btn btn-primary offers-btn-apply-now offers-disabled-btn" role="button">Apply Now</a></td>
-                            </tr>
-
-                            <tr>
-                                <td> <img src="~/assets/banks/logos/kotak.png" class="img-responsive offers-table-bank-image" alt="Kotak Mahindra Bank" title="Kotak Mahindra Bank"> </td>
-                                <td class="hidden-xs"> 13.00% - 18.00%<p>(fixed)</p> </td>
-                                <td class="hidden-xs">13.50% - 24.00%<p>(fixed)</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">offeres</td>
-                                <td class="hidden-xs"><a class="btn btn-primary offers-btn-apply-now offers-disabled-btn" role="button">Apply Now</a></td>
-                            </tr>
-
-                            <tr>
-                                <td> <img src="~/assets/banks/logos/scb.png" class="img-responsive offers-table-bank-image" alt="Standard Chartered Bank" title="Standard Chartered Bank"> </td>
-                                <td class="hidden-xs"> 11.99% - 14.50%<p>(fixed)</p> </td>
-                                <td class="hidden-xs">13.50% - 24.00%<p>(fixed)</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">offeres</td>
-                                <td class="hidden-xs"><a class="btn btn-primary offers-btn-apply-now offers-disabled-btn" role="button">Apply Now</a></td>
-                            </tr>
-
-                            <tr>
-                                <td> <img src="~/assets/banks/logos/tatacapital.png" class="img-responsive offers-table-bank-image" alt="Tata Capital" title="Tata Capital"> </td>
-                                <td class="hidden-xs"> 13.50% - 17.00%<p>(fixed)</p> </td>
-                                <td class="hidden-xs">13.50% - 24.00%<p>(fixed)</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">upto 2.5%</td>
-                                <td class="hidden-xs">offeres</td>
-                                <td class="hidden-xs"><a class="btn btn-primary offers-btn-apply-now offers-disabled-btn" role="button">Apply Now</a></td>
-                            </tr>
-
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    }
                     <div class="center loader hidden" id="personal-loan-offers-loader">
                         <img class="img-responsive text-center" src="~/assets/images/loaders/loading-wallet.gif" alt="Loading Wallet">
                     </div>

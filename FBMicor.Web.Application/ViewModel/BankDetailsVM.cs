@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace FBMicor.Web.Application.ViewModel
+namespace FBMicro.Web.Application.ViewModel
 {
     public class BankDetailsVM
     {

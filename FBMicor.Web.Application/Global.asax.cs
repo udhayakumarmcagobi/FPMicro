@@ -1,4 +1,4 @@
-﻿using FBMicor.Web.Application.App_Start;
+﻿using FBMicro.Web.Application.App_Start;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace FBMicor.Web.Application
+namespace FBMicro.Web.Application
 {
     public class MvcApplication : System.Web.HttpApplication
     {

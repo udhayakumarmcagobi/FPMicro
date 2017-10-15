@@ -11,6 +11,7 @@
         <EntityTypeShape EntityType="FBMicroModel.UserDetail" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="FBMicroModel.UserHomeLoanDetail" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="FBMicroModel.VoucherMaster" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="FBMicroModel.FK_BankLoanDetails_BankMaster" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -1,10 +1,10 @@
-﻿using FBMicor.Web.Application.AutoMapperConfiguration.Profiles;
+﻿using FBMicro.Web.Application.AutoMapperConfiguration.Profiles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace FBMicor.Web.Application.AutoMapperConfiguration
+namespace FBMicro.Web.Application.AutoMapperConfiguration
 {
     public class AutoMapperConfig
     {

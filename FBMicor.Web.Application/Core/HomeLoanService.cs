@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using FBMicor.Web.Application.ViewModel;
+using FBMicro.Web.Application.ViewModel;
 using FBMicro.Data.DataProvider;
 using FBMicro.Data.DataRepository;
 using System;
@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace FBMicor.Web.Application.Core
+namespace FBMicro.Web.Application.Core
 {
     public class HomeLoanService : BaseService
     {

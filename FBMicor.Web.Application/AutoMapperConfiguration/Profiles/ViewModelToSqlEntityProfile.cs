@@ -1,11 +1,11 @@
-﻿using FBMicor.Web.Application.ViewModel;
+﻿using FBMicro.Web.Application.ViewModel;
 using FBMicro.Data.DataProvider;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace FBMicor.Web.Application.AutoMapperConfiguration.Profiles
+namespace FBMicro.Web.Application.AutoMapperConfiguration.Profiles
 {
     public class ViewModelToSqlEntityProfile : AutoMapper.Profile
     {

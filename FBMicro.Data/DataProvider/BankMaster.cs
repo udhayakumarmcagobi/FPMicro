@@ -14,10 +14,19 @@ namespace FBMicro.Data.DataProvider
     
     public partial class BankMaster
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public BankMaster()
+        {
+            this.BankLoanDetails = new HashSet<BankLoanDetail>();
+        }
+    
         public int Id { get; set; }
         public string Name { get; set; }
         public Nullable<decimal> OfferPercentage { get; set; }
         public string BankLogoPath { get; set; }
         public string Description { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BankLoanDetail> BankLoanDetails { get; set; }
     }
 }

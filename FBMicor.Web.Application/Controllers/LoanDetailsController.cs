@@ -1,17 +1,26 @@
-﻿using System;
+﻿using FBMicro.Web.Application.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace FBMicor.Web.Application.Controllers
+namespace FBMicro.Web.Application.Controllers
 {
     public class LoanDetailsController : Controller
     {
+        private readonly BankLoanDetailService bankLoanDetailService;
+
+        public LoanDetailsController()
+        {
+            bankLoanDetailService = new BankLoanDetailService();
+        }
+
         // GET: LoanDetails
         public ActionResult Index()
         {
-            return View();
+            var bankLoanDetailList = bankLoanDetailService.GetBankLoanDetailList();
+            return View(bankLoanDetailList);
         }
     }
 }

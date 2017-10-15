@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace FBMicor.Web.Application.Controllers
+namespace FBMicro.Web.Application.Controllers
 {
     public class ErrorController : Controller
     {

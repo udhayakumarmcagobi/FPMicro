@@ -25,5 +25,7 @@ namespace FBMicro.Data.DataProvider
         public Nullable<decimal> ForeClosureCharges { get; set; }
         public Nullable<decimal> PrePaymentCharges { get; set; }
         public string OffersIfAny { get; set; }
+    
+        public virtual BankMaster BankMaster { get; set; }
     }
 }

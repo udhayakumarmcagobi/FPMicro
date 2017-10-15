@@ -1,10 +1,10 @@
-﻿using FBMicor.Web.Application.AutoMapperConfiguration;
+﻿using FBMicro.Web.Application.AutoMapperConfiguration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace FBMicor.Web.Application.App_Start
+namespace FBMicro.Web.Application.App_Start
 {
     public class Bootstrapper
     {

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FBMicor.Web.Application", "FBMicor.Web.Application\FBMicor.Web.Application.csproj", "{57FBC8CC-0FB2-4F59-9685-30BA7C1817F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FBMicro.Web.Application", "FBMicor.Web.Application\FBMicro.Web.Application.csproj", "{57FBC8CC-0FB2-4F59-9685-30BA7C1817F7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FBMicro.Data", "FBMicro.Data\FBMicro.Data.csproj", "{3D561C56-A811-4A89-9D2F-392CFEED7822}"
 EndProject

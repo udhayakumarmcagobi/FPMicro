@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace FBMicor.Web.Application
+namespace FBMicro.Web.Application
 {
     public class RouteConfig
     {
