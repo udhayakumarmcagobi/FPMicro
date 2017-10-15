@@ -1,8 +1,74 @@
-﻿
+﻿@model List<FBMicro.Web.Application.ViewModel.BankLoanDetailsVM>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Checkout Offers";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="offers-wrapper">
 
-<h2>Bank Offers</h2>
+    <div class="container row-offers-container">
+        <h1>Check out Offers</h1>
+        <div class="row row-offers" itemscope="" itemtype="http://schema.org/Product">
+            <meta itemprop="name" content="Personal Loan Offers"> <span itemprop="brand" itemscope="" itemtype="http://schema.org/Brand">
+                <meta itemprop="name" content="Finance Buddha">
+            </span>
 
+
+            <meta itemprop="description" content="Compare personal loans from top banks. * Lowest Interest Rates * Special Offers * Check Eligibility * Calculate EMI * Apply Online Now">
+
+            <div class="col-md-12 offers-table-container">
+                <div class="table-responsive">
+                    @if (Model != null && Model.Any())
+                    {
+                        <table class="table table-stripped entries" id="entriestable">
+                            <thead>
+                                <tr>
+                                    <th style="width: 543.667px;">Banks<i class="fa-down"></i></th>
+                                    <th class="hidden-xs" style="width: 543.667px;">Interest Rates (Below 30 Lks)   </th>
+                                    <th class="hidden-xs" style="width: 543.667px;">Interest Rates (Above 30 Lks)   </th>
+                                    <th class="hidden-xs" style="width: 543.667px;">Processing Fees (Below 30 Lks)   </th>
+                                    <th class="hidden-xs" style="width: 543.667px;">Processing Fees (Above 30 Lks)   </th>
+                                    <th class="hidden-xs" style="width: 543.667px;">MOD Charges<i class="fa-down"></i></th>
+                                    <th class="hidden-xs" style="width: 543.667px;">Document Charges<i class="fa-down"></i></th>
+                                    <th class="hidden-xs" style="width: 543.667px;">Fore closure Charges<i class="fa-down"></i></th>
+                                    <th class="hidden-xs" style="width: 543.667px;">PrePayment charges<i class="fa-down"></i></th>
+                                    <th class="hidden-xs" style="width: 543.667px;">Offers if any<i class="fa-down"></i></th>
+                                    <th class="hidden-xs" style="width: 543.667px;">Apply Now<i class="fa-down"></i></th>
+                                </tr>
+                            </thead>
+                            <tbody id="personal-loan-offers-container" class="loanoffer ">
+
+                                @for (int loanDetail = 0; loanDetail < Model.Count(); loanDetail++)
+                                {
+                                    <tr>
+
+                                        <td>
+                                            <input type="hidden" value="@Model[loanDetail].Id" />
+                                            <img src="@Model[loanDetail].bankDetails.BankLogo" class="img-responsive offers-table-bank-image"
+                                                 alt="@Model[loanDetail].bankDetails.BankDescription" title="@Model[loanDetail].bankDetails.BankDescription">
+                                        </td>
+                                        <td class="hidden-xs">@Model[loanDetail].ROIBelow30Lks<span>%</span> </td>
+                                        <td class="hidden-xs">@Model[loanDetail].ROIAbove30Lks<span>%</span> </td>
+                                        <td class="hidden-xs">@Model[loanDetail].ProcessingFeeBelow30Lks<span>%</span> </td>
+                                        <td class="hidden-xs">@Model[loanDetail].ProcessingFeeAbove30Lks<span>%</span> </td>
+                                        <td class="hidden-xs">upto @Model[loanDetail].MODCharges<span>%</span> </td>
+                                        <td class="hidden-xs">upto @Model[loanDetail].DocumentCharges<span>%</span> </td>
+                                        <td class="hidden-xs">upto @Model[loanDetail].ForeClosureCharges<span>%</span> </td>
+                                        <td class="hidden-xs">upto @Model[loanDetail].PrePaymentCharges<span>%</span> </td>
+                                        <td class="hidden-xs">@Model[loanDetail].OffersIfAny</td>
+                                        <td class="hidden-xs"><a class="btn btn-primary offers-btn-apply-now offers-disabled-btn" role="button">Apply Now</a></td>
+
+                                    </tr>
+
+                                }
+
+                            </tbody>
+                        </table>
+                    }
+                    <div class="center loader hidden" id="personal-loan-offers-loader">
+                        <img class="img-responsive text-center" src="~/assets/images/loaders/loading-wallet.gif" alt="Loading Wallet">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
