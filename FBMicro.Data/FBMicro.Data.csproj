@@ -127,6 +127,7 @@
       <LastGenOutput>FBMicroModel.cs</LastGenOutput>
     </Content>
     <Content Include="DBScripts\FBMicro_10152017.sql" />
+    <Content Include="DBScripts\FBMIcro_10162017.sql" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
